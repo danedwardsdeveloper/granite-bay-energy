@@ -10,6 +10,7 @@ COPY composer.json composer.lock ./
 RUN composer install --no-interaction --no-progress --no-scripts
 
 FROM wordpress:7.1.4-php8.4-apache AS base
+COPY --from=wordpress:cli-php8.4 /usr/local/bin/wp /usr/local/bin/wp
 RUN set -eux; \
 	cp -a /usr/src/wordpress/. /var/www/html/; \
 	rm -rf /var/www/html/wp-content; \
@@ -38,7 +39,6 @@ CMD ["apache2-foreground"]
 
 FROM base AS development
 ENV WP_ENV=development
-COPY --from=wordpress:cli-php8.4 /usr/local/bin/wp /usr/local/bin/wp
 COPY --from=vendor-dev /build/wp-content/plugins/astra-sites /var/www/html/wp-content/plugins/astra-sites
 RUN chown -R www-data:www-data /var/www/html/wp-content/plugins/astra-sites
 
