@@ -1,0 +1,19 @@
+{
+	"dictionaryDefinitions": [
+		{ "name": "project-words", "path": "./cspell-words.txt", "addWords": true }
+	],
+	"dictionaries": ["project-words"],
+	"language": "en,en-GB",
+	"ignorePaths": [
+		"node_modules/**",
+		"vendor/**",
+		"wp-content/plugins/**",
+		"wp-content/themes/astra/**",
+		"wp-content/uploads/**",
+		".local/**",
+		"db/**",
+		"composer.lock",
+		"pnpm-lock.yaml",
+		"test-results/**"
+	]
+}

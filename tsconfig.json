@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"types": ["node"],
+		"target": "ES2017",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"allowJs": false,
+		"skipLibCheck": true,
+		"strict": true,
+		"exactOptionalPropertyTypes": true,
+		"noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitReturns": true,
+		"noUnusedParameters": true,
+		"noUncheckedSideEffectImports": true,
+		"erasableSyntaxOnly": true,
+		"noEmit": true,
+		"allowImportingTsExtensions": true,
+		"esModuleInterop": true,
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"verbatimModuleSyntax": true,
+		"incremental": true
+	},
+	"include": ["scripts/**/*.ts", "tests/**/*.ts", "playwright.config.ts"],
+	"exclude": ["node_modules", "vendor", "wp-content"]
+}

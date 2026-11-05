@@ -1,0 +1,17 @@
+/vendor/
+/wp-content/plugins/
+/wp-content/themes/astra/
+/.local/
+/wp-content/uploads/st-importer/
+/wp-content/uploads/astra-sites/
+/wp-content/uploads/elementor/
+/wp-content/upgrade/
+/wp-content/uploads/**/wxr.xml
+node_modules/
+test-results/
+playwright-report/
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example

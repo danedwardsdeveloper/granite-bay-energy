@@ -1,0 +1,66 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.5.15/schema.json",
+	"vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
+	"files": {
+		"ignoreUnknown": false,
+		"includes": [
+			"**/*",
+			"!**/node_modules",
+			"!**/vendor",
+			"!**/*.md",
+			"!**/*.svg",
+			"!**/test-results",
+			"!**/.local",
+			"!wp-content/plugins",
+			"!wp-content/themes/astra",
+			"!wp-content/uploads",
+			"!composer.lock"
+		]
+	},
+	"formatter": { "enabled": true, "indentStyle": "tab" },
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"preset": "recommended",
+			"complexity": { "useLiteralKeys": "off" },
+			"suspicious": {
+				"noConsole": "warn",
+				"noExplicitAny": "warn",
+				"noDoubleEquals": "warn",
+				"noEmptyInterface": "warn",
+				"noImplicitAnyLet": "warn",
+				"noPrototypeBuiltins": "warn"
+			},
+			"correctness": {
+				"noUnusedVariables": "warn",
+				"noUndeclaredVariables": "warn"
+			},
+			"style": {
+				"noNonNullAssertion": "error",
+				"noNestedTernary": "warn",
+				"useConst": "warn"
+			}
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"jsxQuoteStyle": "double",
+			"trailingCommas": "all",
+			"semicolons": "asNeeded",
+			"arrowParentheses": "always",
+			"lineWidth": 140,
+			"indentWidth": 2
+		}
+	},
+	"overrides": [
+		{
+			"includes": ["cspell.json"],
+			"json": { "parser": { "allowComments": true } }
+		}
+	],
+	"assist": {
+		"enabled": true,
+		"actions": { "source": { "organizeImports": "on" } }
+	}
+}

@@ -1,0 +1,8 @@
+# The repo is one project and says so. Left unset, pnpm counts projects one way when it installs
+# (the root alone) and another way before every command it runs (any nested package.json outside a
+# dot-directory), so the first such file added anywhere makes pnpm decide the workspace changed,
+# silently reinstall, and print "Already up to date" over whatever the command was going to say.
+packages:
+  - '.'
+allowBuilds:
+  esbuild: false

@@ -1,0 +1,8 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"incremental": false
+	},
+	"include": ["scripts/**/*.ts", "tests/**/*.ts", "playwright.config.ts"],
+	"exclude": ["node_modules", "vendor", "wp-content"]
+}

@@ -1,0 +1,37 @@
+{
+	"name": "granite-bay-energy",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"license": "MIT",
+	"packageManager": "pnpm@12.4.1",
+	"engines": {
+		"node": "24.x"
+	},
+	"scripts": {
+		"dev": "docker compose up --build --wait && echo 'http://localhost:22000'",
+		"stop": "docker compose down",
+		"provision": "bash bin/provision.sh",
+		"format": "biome format . --write",
+		"check": "biome check . --write",
+		"typecheck": "tsc --noEmit --project tsconfig.typecheck.json",
+		"lint:php": "composer exec -- phpcs",
+		"lint:php:fix": "composer exec -- phpcbf",
+		"spelling": "cspell --gitignore --no-progress --no-summary --show-suggestions .",
+		"quality": "pnpm check && pnpm typecheck && pnpm lint:php && pnpm spelling",
+		"e2e": "playwright test",
+		"deploy": "fly deploy",
+		"teardown": "bash bin/teardown.sh",
+		"commit": "tsx scripts/commit.ts",
+		"unit": "vitest run"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.5.15",
+		"@playwright/test": "1.58.2",
+		"@types/node": "25.5.0",
+		"cspell": "10.4.0",
+		"tsx": "4.23.15",
+		"typescript": "6.0.3",
+		"vitest": "5.0.5"
+	}
+}

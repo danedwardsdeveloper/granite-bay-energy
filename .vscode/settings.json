@@ -1,0 +1,28 @@
+{
+	"tailwindCSS.files.exclude": [
+		"**/.git/**",
+		"**/node_modules/**",
+		"**/vendor/**",
+		"**/wp-content/plugins/**",
+		"**/wp-content/themes/astra/**"
+	],
+	"files.exclude": {
+		"**/.local": true
+	},
+	"search.exclude": {
+		"**/vendor": true,
+		"**/wp-content/plugins": true,
+		"**/wp-content/themes/astra": true,
+		"**/wp-content/uploads": true,
+		"**/.local": true
+	},
+	"files.watcherExclude": {
+		"**/vendor/**": true,
+		"**/wp-content/plugins/**": true,
+		"**/wp-content/themes/astra/**": true,
+		"**/.local/**": true
+	},
+	"[php]": {
+		"editor.defaultFormatter": "wongjn.php-sniffer"
+	}
+}
