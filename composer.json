@@ -1,0 +1,44 @@
+{
+	"name": "danedwardsdeveloper/granite-bay-energy",
+	"description": "WordPress marketing site for Granite Bay Energy.",
+	"type": "project",
+	"license": "MIT",
+	"require": {
+		"php": ">=8.4",
+		"composer/installers": "2.3.0",
+		"wpackagist-plugin/elementor": "4.3.6",
+		"wpackagist-plugin/header-footer-elementor": "2.9.6",
+		"wpackagist-plugin/sqlite-database-integration": "3.1.2",
+		"wpackagist-plugin/sureforms": "2.13.0",
+		"wpackagist-theme/astra": "4.14.2"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "1.1.2",
+		"wp-coding-standards/wpcs": "3.4.1",
+		"wpackagist-plugin/astra-sites": "4.7.10"
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org",
+			"only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+		}
+	],
+	"extra": {
+		"installer-paths": {
+			"wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+			"wp-content/themes/{$name}/": ["type:wordpress-theme"]
+		}
+	},
+	"scripts": {
+		"lint": "phpcs",
+		"lint:fix": "phpcbf"
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		},
+		"sort-packages": true
+	}
+}
