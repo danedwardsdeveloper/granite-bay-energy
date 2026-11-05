@@ -1,0 +1,22 @@
+services:
+  site:
+    build:
+      context: .
+      target: development
+    ports:
+      - '22000:80'
+    environment:
+      WP_ENV: development
+      WP_DB_PATH: /var/www/html/wp-content/database/site.sqlite
+    volumes:
+      - ./.local/database:/var/www/html/wp-content/database
+      - ./wp-content/uploads:/var/www/html/wp-content/uploads
+      - ./wp-content/mu-plugins:/var/www/html/wp-content/mu-plugins
+      - ./wp-content/themes/granite-bay:/var/www/html/wp-content/themes/granite-bay
+    healthcheck:
+      test: ['CMD', 'curl', '-fsS', 'http://localhost/healthz.php']
+      interval: 5s
+      timeout: 3s
+      retries: 30
+      start_period: 10s
+    restart: unless-stopped

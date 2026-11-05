@@ -1,0 +1,41 @@
+app = 'granite-bay-energy'
+primary_region = 'lhr'
+
+[build]
+target = 'production'
+
+[processes]
+app = ""
+
+[env]
+WP_ENV = 'production'
+WP_DB_PATH = '/var/www/html/wp-content/database/site.sqlite'
+
+[http_service]
+internal_port = 80
+force_https = true
+auto_stop_machines = 'off'
+auto_start_machines = true
+min_machines_running = 1
+processes = ["app"]
+
+[mounts]
+source = 'granite_bay_data'
+destination = '/var/www/html/wp-content/database'
+initial_size = '1gb'
+
+[[http_service.checks]]
+grace_period = "15s"
+interval = "30s"
+timeout = "5s"
+method = "GET"
+path = "/healthz.php"
+
+[[restart]]
+policy = "on-failure"
+retries = 3
+
+[[vm]]
+memory = '512mb'
+cpu_kind = 'shared'
+cpus = 1
