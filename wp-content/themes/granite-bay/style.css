@@ -1,0 +1,41 @@
+/*
+Theme Name: Granite Bay
+Theme URI: https://github.com/danedwardsdeveloper/granite-bay-energy
+Author: Dan Edwards
+Author URI: https://danedwardsdeveloper.com
+Description: Astra child theme for Granite Bay Energy.
+Template: astra
+Version: 1.0.0
+License: MIT
+License URI: https://opensource.org/licenses/MIT
+Text Domain: granite-bay
+*/
+
+:root {
+	--granite-bay-north-sea: #0f3047;
+	--granite-bay-flare: #e8761a;
+	--granite-bay-granite: #5a6472;
+}
+
+.granite-bay-credit {
+	padding: 1rem;
+	background: var(--granite-bay-north-sea);
+	color: #ffffff;
+	font-size: 0.875rem;
+	text-align: center;
+}
+
+.granite-bay-credit a {
+	color: #ffffff;
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+
+.granite-bay-credit a:hover {
+	color: var(--granite-bay-flare);
+}
+
+.granite-bay-credit a:focus-visible {
+	outline: 2px solid var(--granite-bay-flare);
+	outline-offset: 2px;
+}

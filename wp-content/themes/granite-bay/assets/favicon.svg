@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Granite Bay Energy">
+	<rect width="64" height="64" rx="12" fill="#0f3047"/>
+	<path d="M32 11 L48 47 H16 Z" fill="none" stroke="#e8761a" stroke-width="6" stroke-linejoin="round"/>
+	<path d="M23 34 H41" stroke="#e8761a" stroke-width="5" stroke-linecap="round"/>
+	<path d="M10 56 H54" stroke="#7fa8c4" stroke-width="5" stroke-linecap="round"/>
+</svg>
